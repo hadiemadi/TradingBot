@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 
 #Define Ticker:
-tickers = ['TNA', 'TQQQ', 'QQQ']
+tickers = ['TNA', 'TQQQ', 'SPY']
 
 #define timeframe:
 end_date = datetime.today()
