@@ -38,10 +38,21 @@ insert into stock (symbol, company) values('AMD', 'Advanced Micro Design');
 insert into stock (symbol, company) values('TSLA', 'Tesla');
 
 
-Select 
+Select Statements:
+
 select * from stock;
 select id from stock;
 select id, symbol from stock;
-select company from stock where symbol = 'TSLA";
-select company from stock where symbol like 'A%";
-select company from stock where company like '%icro%";
+select company from stock where symbol = 'TSLA';
+select company from stock where symbol like 'A%';
+select company from stock where company like '%icro%';
+select * from stock limit 3;
+select * from stock order by symbol;
+select * from stock order by symbol desc;
+select * from stock order by symbol asc;
+select count(*) from stock;
+select count(*) from stock where company like '%icro%';
+
+
+Updating
+update stock set company = 'Apple Inc' where symbol = 'AAPL';
