@@ -1,0 +1,11 @@
+git push origin main
+git pull origin main
+
+
+https://github.com/hackingthemarkets/fullstack-trading-app
+
+Youtube Playlist:
+https://www.youtube.com/watch?v=OFnOEIyqSRg&list=PLvzuUVysUFOuoRna8KhschkVVUo2E2g6G
+
+
+Sqlite.org
