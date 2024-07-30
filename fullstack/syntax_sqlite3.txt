@@ -1,4 +1,11 @@
 
+
+
+SQLITE Course
+CRUD operation Creat Read Update Delete
+
+
+
 Create a fnew database file called "app":
 
 sqlite3 app.db
@@ -49,10 +56,20 @@ select company from stock where company like '%icro%';
 select * from stock limit 3;
 select * from stock order by symbol;
 select * from stock order by symbol desc;
-select * from stock order by symbol asc;
+select * from stock order by symbol asc limit 100;
 select count(*) from stock;
 select count(*) from stock where company like '%icro%';
 
 
 Updating
 update stock set company = 'Apple Inc' where symbol = 'AAPL';
+update stock set symbol = 'AMDA' where id = 3
+
+
+Delete
+delete from stock where id = 3
+   
+
+
+
+import 
