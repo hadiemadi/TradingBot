@@ -9,3 +9,11 @@ https://www.youtube.com/watch?v=OFnOEIyqSRg&list=PLvzuUVysUFOuoRna8KhschkVVUo2E2
 
 
 Sqlite.org
+
+
+
+
+for the database:
+pip3 install alpaca-trade-api
+key: PK537T0L5FL5U9H00MBA
+secret: jX4zJToAzh4mUkViPPfNklCO8gpiBNVdvJ1sgXvh

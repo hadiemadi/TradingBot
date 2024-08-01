@@ -1,7 +1,7 @@
 import sqlite3
 import alpaca_trade_api as tradeapi
 
-connection = sqlite3.connect('app.db')    #if the flie does not exist it creates one database
+connection = sqlite3.connect('/Users/hei/PythonProjects/TradingBot/app.db')    #if the flie does not exist it creates one database
 connection.row_factory = sqlite3.Row
 
 cursor = connection.cursor()
@@ -29,7 +29,7 @@ assets = api.list_assets()
 for asset in assets:
     try:
         if asset.status == 'active' and asset.tradable and asset.symbol not in symbols:
-            # print(asset.symbol)
+            print(f"Added a new stock {asset.symbol} {asset.company}")
             cursor.execute("INSERT INTO stock (symbol, company) VALUES(?, ?)",(asset.symbol, asset.name))
     except Exception as e:
         # print(asset.symbol)
