@@ -1,8 +1,8 @@
 
-import sqlite3
+import sqlite3, config
 import alpaca_trade_api as tradeapi
 
-connection = sqlite3.connect('app.db')    #if the flie does not exist it creates one database
+connection = sqlite3.connect(config.DB_FILE)    #if the flie does not exist it creates one database
 
 cursor = connection.cursor()
 
@@ -11,9 +11,8 @@ cursor = connection.cursor()
 #cursor.execute("insert into stock (symbol, company) values('Z', 'Zillow')")
 
 cursor.execute("delete from stock") # delete everything from stock database
-apikey = 'PKHE04W3FWDWPAMOVWSB'
-apisecret = 'mww2dno0mgcvVoAdYdik3UslklsTTFwSRout2Y60'
-api = tradeapi.REST(apikey,apisecret,base_url='https://paper-api.alpaca.markets')
+
+api = tradeapi.REST(config.API_KEY,config.SECRET_KEY,base_url=config.API_URL)
 
 assets = api.list_assets()
 
