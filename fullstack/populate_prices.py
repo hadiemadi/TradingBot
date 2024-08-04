@@ -48,27 +48,30 @@ for row in rows:
 # barsets = api.get_bars('SUSHI/USD',TimeFrame(1, TimeFrameUnit.Day)) # No data
 # print(barsets.df)
 
-chunk_size = 2
-for i in range(0,2,chunk_size):
+chunk_size = 200
+
+
+for i in range(0,len(symbols)-300,chunk_size):
     # print(i)
     # print(i+chunk_size)
     symbol_chunk = symbols[i:i+chunk_size]
     # print(symbol_chunk)
     # print(len(symbol_chunk))
     barsets = api.get_bars(symbol_chunk,TimeFrame(1, TimeFrameUnit.Day),config.START_DATE, config.END_DATE)
+    # barsets = api.get_bars(symbol_chunk,TimeFrame(1, TimeFrameUnit.Day),"2020-07-01", "2020-08-01")
     for bar in barsets:
         stock_id= stock_dict[bar.S]
 # symbol = bar.S
         # print(bar.S)
-        print(f'processing symbol:{bar.S} {stock_id}')
-        print(stock_id, bar.t.date(), bar.o, bar.h, bar.l, bar.c,  bar.v)
-        cursor.execute("INSERT INTO stock_price (stock_id, date, open, high, low, close, volume) VALUES (?,?,?,?,?,?,?)", 
+        print(f'processing symbol:{bar.S}')
+        # print(stock_id, bar.t.date(), bar.o, bar.h, bar.l, bar.c,  bar.v)
+        cursor.execute("INSERT INTO stock_price (stock_id, date, open, high, low, close, volume) VALUES (?, ?, ?, ?, ?, ?, ?)", 
                        (stock_id, bar.t.date(), bar.o, bar.h, bar.l, bar.c,  bar.v))
 
 
 connection.commit()
 
-
+cursor.close()
 
 # for i in range(0,13,5):
 #     print(i)

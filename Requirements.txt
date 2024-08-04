@@ -15,5 +15,12 @@ Sqlite.org
 
 for the database:
 pip3 install alpaca-trade-api
-key: PK537T0L5FL5U9H00MBA
-secret: jX4zJToAzh4mUkViPPfNklCO8gpiBNVdvJ1sgXvh
+
+
+#fastAPI
+pip3 install fastapi uvicorn
+uvicorn main:app --reload
+
+#to kill the server
+sudo lsof -i:8000 # this gives you the PID
+kill -9 (processID) # this kills the server

@@ -71,5 +71,9 @@ delete from stock where id = 3
    
 
 
-
-import 
+# the way to call data from 2 tables in the database
+SELECT symbol, date, open, high, low, close
+FROM stock_price
+JOIN stock on stock_id = stock_price.stock_id
+WHERE symbol = 'AAPL'
+ORDER BY date
