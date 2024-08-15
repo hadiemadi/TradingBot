@@ -18,9 +18,14 @@ pip3 install alpaca-trade-api
 
 
 #fastAPI
+https://fastapi.tiangolo.com/
+
 pip3 install fastapi uvicorn
 uvicorn main:app --reload
 
 #to kill the server
 sudo lsof -i:8000 # this gives you the PID
 kill -9 (processID) # this kills the server
+
+#Install jinja2:
+pip install jinja2
